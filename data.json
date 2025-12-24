@@ -1,0 +1,14 @@
+{
+    "burgers":[
+        {
+            "name":"burger1",
+            "image":"../",
+            "cost":"200",
+            "rating":"",
+            "description":"zxsda"
+        },
+        {
+            
+        }
+    ]
+}
