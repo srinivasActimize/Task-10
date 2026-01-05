@@ -1,11 +1,40 @@
-import { View, Image, Text,  TextInput, Pressable, Alert } from 'react-native'
+import { View, Image, Text,  TextInput, Pressable, Alert, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ScrollView } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { Theme } from '../Theme/Theme'
 import styles from '../FontStyle/FontStyles'
-
+import { useNavigation } from '@react-navigation/native'
 const Home = () => {
+    const navigation=useNavigation();
+    const navigateOnPress=(str)=>{
+        navigation.navigate('Details',{category:str});
+    }
+    
+  const handlePayment = async () => {
+    
+      const options = {
+        key: "rzp_test_Rl6zFhLRzvwqro",  
+        amount: 170*100,
+        currency: 'INR',
+        name: "Movie Ticket Booking",
+        description: `Booking for chilli chicken`,
+        handler: function (response) {
+          alert("Payment Successful!");
+          console.log("Payment Response:", response);
+        },
+        prefill: {
+          name: "Srinu",
+          email: "srinu@example.com",
+          contact: "9999999999",
+        },
+        theme: {
+          color: "#8B5CF6",
+        },
+      };
+      const razor = new window.Razorpay(options);
+      razor.open();
+  }
     return (
         <ScrollView style={styles.body}>
             <View style={styles.starting}>
@@ -18,7 +47,7 @@ const Home = () => {
             <Text style={[Theme.font24SemiBold,{paddingLeft:10}]}>All categories</Text>
             <View style={styles.categorieImages}>
                 <ScrollView horizontal={true}>
-                    <Pressable onPress={() => { Alert.alert('hi') }}>
+                    <Pressable onPress={() => { navigateOnPress('burgers') }}>
                         <View style={styles.card}>
                             <Image style={styles.img} source={require('../assets/images/burger.png')} />
                             <View>
@@ -30,7 +59,7 @@ const Home = () => {
                             </View>
                         </View>
                     </Pressable>
-                    <Pressable>
+                    <Pressable onPress={() => { navigateOnPress('pizzas') }}>
                         <View style={styles.card}>
                             <Image style={styles.img} source={{ uri: 'https://pngimg.com/uploads/pizza/pizza_PNG7104.png' }} />
                             <View>
@@ -42,7 +71,7 @@ const Home = () => {
                             </View>
                         </View>
                     </Pressable>
-                    <Pressable>
+                    <Pressable onPress={() => { navigateOnPress('biryanis') }}>
                         <View style={styles.card}>
                             <Image style={styles.img} source={require('../assets/images/biryani.png')} />
                             <View>
@@ -54,7 +83,7 @@ const Home = () => {
                             </View>
                         </View>
                     </Pressable>
-                    <Pressable>
+                    <Pressable onPress={() => { navigateOnPress('curries') }}>
                         <View style={styles.card}>
                             <Image style={styles.img} source={require('../assets/images/mutton.png')} />
                             <View>
@@ -84,6 +113,9 @@ const Home = () => {
                             <View style={{ flexDirection: 'row' }}><Ionicons name='bicycle' size={25} color='#FEB05D' /><Text> Free</Text></View>
                             <View style={{ flexDirection: 'row' }}><Ionicons name='alarm' size={25} color='#FEB05D' /><Text> 20min</Text></View>
                         </View>
+                        <TouchableOpacity onPress={handlePayment} >
+                            <Text> Pay</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </Pressable>

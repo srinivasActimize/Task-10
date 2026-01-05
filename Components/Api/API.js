@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BASE_URL, STATUS_CODE } from "./constants";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
  
 const METHOD = {
   GET: "get",
@@ -21,7 +21,7 @@ class API {
           resolve(response);
         })
         .catch((error) => {
-          toast.error("Something went wrong");
+          // toast.error("Something went wrong");
           console.log(error);
         });
     });
@@ -34,15 +34,15 @@ class API {
       this.api(METHOD.POST, url, data)
         .then((response) => {
            if(response.data){
-            toast.success(" post request successfully");
+            // toast.success(" post request successfully");
             resolve(response);
           }
           else{
-            toast.error("post Request Failed",);
+            // toast.error("post Request Failed",);
           }
         })
         .catch((error) => {
-          toast.error("Something went wrong");
+          // toast.error("Something went wrong");
           console.log(error);
         });
     });
@@ -51,11 +51,11 @@ class API {
     return new Promise((resolve, reject) => {
       this.api(METHOD.PUT, url, data)
         .then((response) => {
-          toast.success(" update request successfully");
+          // toast.success(" update request successfully");
           resolve(response);
         })
         .catch((error) => {
-          toast.error("Something went wrong");
+          // toast.error("Something went wrong");
           console.log(error);
         });
     });
@@ -64,21 +64,23 @@ class API {
     return new Promise((resolve, reject) => {
       this.api(METHOD.DELETE, url, data)
         .then((response) => {
-          toast.success(" delete request successfully");
+          // toast.success(" delete request successfully");
           resolve(response);
         })
         .catch((error) => {
-          toast.error("Something went wrong");
+          // toast.error("Something went wrong");
           console.log(error);
         });
     });
   }
   api(method, url, data) {
+    console.log('method api');
     return new Promise(( resolve,reject) => {
       let axiosConfig = {};
       axiosConfig.method = method;
       axiosConfig.url = this.baseURL + url;
       axiosConfig.headers = this.setHeaders(data);
+      console.log('checking')
       if (data) {
         if (data) axiosConfig.data = data;
       }
@@ -95,11 +97,11 @@ class API {
             if (response) {
             }
             else if (response.status === 200) {
-              toast.success('response success')
+              // toast.success('response success')
                
             }
             else {
-              toast.error("Something went wrong");
+              // toast.error("Something went wrong");
             }
           }
         })
@@ -113,7 +115,7 @@ class API {
     headers["accept-language"] = "en";
     headers["Content-Type"] = "application/json";
     headers["Accept"] = "application/json";
-    headers["Authorization"] = localStorage.getItem("token");
+    // headers["Authorization"] = localStorage.getItem("token");
     if (data) {
       if (data.isMultipart) {
         headers["Content-Type"] = "multipart/form-data";

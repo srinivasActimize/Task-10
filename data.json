@@ -1,14 +1,207 @@
 {
     "burgers":[
         {
-            "name":"burger1",
+            "name":"burger large",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610516/burger_la8k3v.png",
+            "cost":"200",
+            "rating":"5/5",
+            "description":"delcious burger with chicken "
+        },
+        {
+             "name":"roll",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610516/Shawarma_omf8gz.png",
+            "cost":"200",
+            "rating":"3/5",
+            "description":"delcious burger with chicken "
+        },
+         {
+             "name":"burger1",
             "image":"../",
             "cost":"200",
             "rating":"",
             "description":"zxsda"
         },
-        {
+         {
+             "name":"fried chicken",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610516/wings_wo4ehw.png",
+            "cost":"200",
+            "rating":"4/5",
+            "description":"delcious burger with chicken "
+        },
+         {
+             "name":"tandoori",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610516/tandoori_aaubm0.png",
+            "cost":"200",
+            "rating":"5/5",
+            "description":"delcious burger with chicken "
+        },
+         {
+             "name":"fish",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610515/fish_xzaa3k.png",
+            "cost":"300",
+            "rating":"4/5",
+            "description":"delcious burger with chicken "
+        }
+    ],
+    "pizzas":[
+         {
+             "name":"pizza slice",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610516/pizza_nif6dl.png",
+            "cost":"300",
+            "rating":"2/5",
+            "description":"deliccious pizza with cheese and toppings"
+        },
+         {
+             "name":"sandwich",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610515/sandwitch_w6l28h.png",
+            "cost":"200",
+            "rating":"4/5",
+            "description":"deliccious pizza with cheese and toppings"
+        },
+         {
+             "name":"potato chips",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610514/frenchfries_wsloe8.png",
+            "cost":"200",
+            "rating":"5/5",
+            "description":"deliccious pizza with cheese and toppings"
+        },
+         {
+             "name":"chilli chicken",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610513/chillichicken_mfnats.png",
+            "cost":"200",
+            "rating":"5/5",
+            "description":"deliccious pizza with cheese and toppings"
+        },
+         {
+            "name":"sandwich",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610515/sandwitch_w6l28h.png",
+            "cost":"200",
+            "rating":"4/5",
+            "description":"deliccious pizza with cheese and toppings"
+        },
+         {
+            "name":"pizza slice",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610516/pizza_nif6dl.png",
+            "cost":"300",
+            "rating":"2/5",
+            "description":"deliccious pizza with cheese and toppings"
+        },
+         {
+            "name":"pizza slice",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610516/pizza_nif6dl.png",
+            "cost":"300",
+            "rating":"2/5",
+            "description":"deliccious pizza with cheese and toppings"
+        },
+         {
+             "name":"sandwich",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610515/sandwitch_w6l28h.png",
+            "cost":"200",
+            "rating":"4/5",
+            "description":"deliccious pizza with cheese and toppings"
+        }
+    ],
+    "biryanis":[
+         {
+             "name":"dum biryani",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610513/biryani_cpfrm6.png",
+            "cost":"200",
+            "rating":"3/5",
+            "description":"delicious biryani with raita. made with basmathi and love"
+        },
+         {
+             "name":"fry biryani",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610514/dumbiryani_ee53pv.png",
+            "cost":"300",
+            "rating":"4/5",
+            "description":"delicious biryani with raita. made with basmathi and love"
+        },
+         {
+             "name":"dum biryani",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610514/biryani2_ccqppl.png",
+            "cost":"200",
+            "rating":"4/3",
+            "description":"delicious biryani with raita. made with basmathi and love"
+        },
+         {
+             "name":"mutton biryani",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610515/masalaBiryani_r8i6ze.png",
+            "cost":"600",
+            "rating":"5/5",
+            "description":"delicious biryani with raita. made with basmathi and love"
+        },
+         {
+             "name":"jeedi pappu biryani",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610515/friedrice_g47zdn.png",
+            "cost":"400",
+            "rating":"3/5",
+            "description":"delicious biryani with raita. made with basmathi and love"
+        },
+         {
+             "name":"dum biryani",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610514/biryani2_ccqppl.png",
+            "cost":"300",
+            "rating":"4/5",
+            "description":"delicious biryani with raita. made with basmathi and love"
+        },
+         {
+             "name":"dum biryani",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610514/biryani2_ccqppl.png",
+            "cost":"300",
+            "rating":"4/5",
+            "description":"delicious biryani with raita. made with basmathi and love"
+        }
+    ],
+    "curries":[
+         {
+             "name":"chicken curry",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610513/chickenCurry_smdiw4.png",
+            "cost":"200",
+            "rating":"4/5",
+            "description":"delicious curry made with chicken and spices"
+        },
+         {
+             "name":"mutton curry",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610514/mutton_twuzrd.png",
+            "cost":"200",
+            "rating":"4/5",
+            "description":"delicious curry made with mutton and spices"
+        },
+         {
+             "name":"panner curry",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610514/pannerCurry_lebybk.png",
+            "cost":"200",
+            "rating":"5/5",
+            "description":"delicious curry made with panneer and spices"
+        },
+         {
             
+             "name":"mutton curry",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610514/mutton_twuzrd.png",
+            "cost":"200",
+            "rating":"4/5",
+            "description":"delicious curry made with mutton and spices"
+        },
+         {
+             "name":"chicken curry",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610513/chickenCurry_smdiw4.png",
+            "cost":"200",
+            "rating":"4/5",
+            "description":"delicious curry made with chicken and spices"
+        },
+         {
+            "name":"panner curry",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610514/pannerCurry_lebybk.png",
+            "cost":"200",
+            "rating":"5/5",
+            "description":"delicious curry made with panneer and spices"
+        },
+         {
+             "name":"chicken curry",
+            "image":"https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610513/chickenCurry_smdiw4.png",
+            "cost":"200",
+            "rating":"4/5",
+            "description":"delicious curry made with chicken and spices"
         }
     ]
 }
