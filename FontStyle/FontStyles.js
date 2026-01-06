@@ -68,7 +68,25 @@ import { StyleSheet } from "react-native";
         borderRadius: 14,
         flexDirection: 'row',
         margin: 10
-    }
+    },
+    buttonContainer: {
+    // elevation: 1, // Android shadow
+    borderWidth:3,
+    borderRadius: 20,
+    marginVertical:10,
+    paddingVertical: 10,
+    paddingHorizontal: 12,
+    
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    textTransform: 'uppercase',
+  },
+  textColor:{
+    color:'#ffffff'
+  }
 })
 
 export default styles;

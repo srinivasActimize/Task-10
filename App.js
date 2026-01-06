@@ -7,18 +7,40 @@ import Details from './ui/Details';
 import { fonts } from './Theme/Theme';
 import { Provider } from 'react-redux';
 import store from './Components/redux/store';
+import ItemDetails from './ui/ItemDetails';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
+
 export default function App() {
 
   const font = fonts();
 
 
+  function BottomTabs() {
+    return (
+      <Tab.Navigator screenOptions={{ headerShown: false }}>
+        <Tab.Screen name="Home" component={Home} />
+        {/* Future tabs */}
+        {/* <Tab.Screen name="Profile" component={Profile} /> */}
+      </Tab.Navigator>
+    );
+  }
+
   return (
+
     <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name='homepage' component={Home} />
+          {/* Bottom Tabs as main screen */}
+          <Stack.Screen
+            name="MainTabs"
+            component={BottomTabs}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen name='Details' component={Details} />
+          <Stack.Screen name='ItemDetails' component={ItemDetails} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

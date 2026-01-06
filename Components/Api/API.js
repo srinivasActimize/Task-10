@@ -74,13 +74,11 @@ class API {
     });
   }
   api(method, url, data) {
-    console.log('method api');
     return new Promise(( resolve,reject) => {
       let axiosConfig = {};
       axiosConfig.method = method;
       axiosConfig.url = this.baseURL + url;
       axiosConfig.headers = this.setHeaders(data);
-      console.log('checking')
       if (data) {
         if (data) axiosConfig.data = data;
       }
