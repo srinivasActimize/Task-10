@@ -9,6 +9,10 @@ import { Provider } from 'react-redux';
 import store from './Components/redux/store';
 import ItemDetails from './ui/ItemDetails';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
+import Profile from './ui/Profile';
+import Message from './ui/Message';
+import colors from './Theme/Colors';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -17,16 +21,34 @@ export default function App() {
 
   const font = fonts();
 
+function BottomTabs() {
+  return (
+    <Tab.Navigator
+  screenOptions={({ route }) => ({
+    headerShown: false,
+    tabBarIcon: ({ focused, color, size }) => {
+      let iconName;
 
-  function BottomTabs() {
-    return (
-      <Tab.Navigator screenOptions={{ headerShown: false }}>
-        <Tab.Screen name="Home" component={Home} />
-        {/* Future tabs */}
-        {/* <Tab.Screen name="Profile" component={Profile} /> */}
-      </Tab.Navigator>
-    );
-  }
+      if (route.name === 'Home') {
+        iconName = 'home';
+      } else if (route.name === 'Profile') {
+        iconName = 'person';
+      } else if (route.name === 'Messages') {
+        iconName = 'chatbox';
+      }
+
+      return <Ionicons name={iconName} size={24} color={colors.fundation} />;
+    },
+  })}
+>
+
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Messages" component={Message} />
+    </Tab.Navigator>
+  );
+}
+
 
   return (
 

@@ -10,8 +10,6 @@ const ItemDetails = ({ route }) => {
 
     // testkey=rzp_test_S0VaD5Wuoaq0Oe
     // testkeysecret=yhpF2rrPR1bAXNZdObFrjybr
-    //https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767689768/pizza_nif6dl.jpg
-    //https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767610516/pizza_nif6dl.png
     
 
    const handlePayment = () => {

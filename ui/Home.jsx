@@ -7,6 +7,7 @@ import styles from '../FontStyle/FontStyles'
 import { useNavigation } from '@react-navigation/native'
 import RazorpayCheckout from 'react-native-razorpay'
 const Home = () => {
+
     const navigation = useNavigation();
     const navigateOnPress = (str) => {
         navigation.navigate('Details', { category: str });
@@ -14,7 +15,6 @@ const Home = () => {
     const handlePayment = () => {
         const options = {
             description: 'proceed to payment',
-            // image: itemDetails.image,
             currency: 'INR',
             key: 'rzp_test_S0VaD5Wuoaq0Oe',
             amount: 110 * 100,
@@ -36,6 +36,7 @@ const Home = () => {
             });
     };
     return (
+        
         <ScrollView style={styles.body}>
             <View style={styles.starting}>
                 <Text style={Theme.font20SemiBold}>Hey srinu, Good Morning!</Text>
@@ -61,7 +62,7 @@ const Home = () => {
                     </Pressable>
                     <Pressable onPress={() => { navigateOnPress('pizzas') }}>
                         <View style={styles.card}>
-                            <Image style={styles.img} source={{ uri: 'https://pngimg.com/uploads/pizza/pizza_PNG7104.png' }} />
+                            <Image style={styles.img} source={{ uri: 'https://res.cloudinary.com/dm2xtqaqy/image/upload/v1767692677/pizza_nif6dl.png' }} />
                             <View>
                                 <Text style={Theme.font20SemiBold}>Pizza</Text>
                                 <View style={styles.cardContent}>
