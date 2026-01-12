@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "foodDelivery",
-    "slug": "foodDelivery",
+    "name": "GoogleExpo",
+    "slug": "GoogleExpo",
     "version": "1.0.0",
-    // "plugins": ["@react-native-google-signin/google-signin"],
     "orientation": "portrait",
+    "plugins": ["@react-native-google-signin/google-signin","expo-web-browser"],
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
@@ -23,19 +23,15 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.srinua.foodDelivery"
+      "package": "com.srinua.GoogleExpo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "60497fb0-b50c-4f47-ba94-108cef96141a"
+        "projectId": "bc338c0d-3001-4292-a88a-8d182f4635e7"
       }
-    },
-    // "plugins": [
-    //   "@react-native-firebase/app",
-    //   "@react-native-google-signin/google-signin"
-    // ]
+    }
   }
 }

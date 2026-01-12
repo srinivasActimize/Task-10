@@ -1,124 +1,49 @@
 {
   "project_info": {
-    "project_number": "24858763779",
-    "firebase_url": "https://employee-9b2e1-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "employee-9b2e1",
-    "storage_bucket": "employee-9b2e1.firebasestorage.app"
+    "project_number": "925102963718",
+    "project_id": "expo-90fc6",
+    "storage_bucket": "expo-90fc6.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:24858763779:android:e11fb6ade457f277be6436",
+        "mobilesdk_app_id": "1:925102963718:android:d056e838bab6040ae7d787",
         "android_client_info": {
-          "package_name": "com.srinua.food"
+          "package_name": "com.srinua.GoogleExpo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "24858763779-9g4nikfcpkg43oo1pkn88drllbbcpbbc.apps.googleusercontent.com",
+          "client_id": "925102963718-bs01ddp5dg1j8dvd66k3u9lrm01ormep.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.srinua.food",
-            "certificate_hash": "2785456cef8a93b1625b8a10d30682dcfef540bc"
+            "package_name": "com.srinua.GoogleExpo",
+            "certificate_hash": "891810c9ac3c99687d77dfc86e9d2fe915bf4f6c"
           }
         },
         {
-          "client_id": "24858763779-3tn63kkleobndnnk1g5junkpf34fqson.apps.googleusercontent.com",
+          "client_id": "925102963718-i62v3kip4miiki3cp7od594930puggn9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.srinua.GoogleExpo",
+            "certificate_hash": "550cebeec3f9b6ee44f22e62982ed6da27f6cbf2"
+          }
+        },
+        {
+          "client_id": "925102963718-fi5afief8l6qntqf206g6k0ao9shct25.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDn7vV4K4ANOA-92-0-xjZ7rrx_WCjPMT8"
+          "current_key": "AIzaSyBNYfgaeeKxbBQtf7MLsAV92g_VF1hh6hE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "24858763779-3tn63kkleobndnnk1g5junkpf34fqson.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:24858763779:android:82cc242762afc800be6436",
-        "android_client_info": {
-          "package_name": "com.srinua.foodDelivery"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "24858763779-2j39ojlta3i3svkhoif63p64c644v3b9.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.srinua.foodDelivery",
-            "certificate_hash": "389e7f72fca52958f448d5e585867cf4d25c6c54"
-          }
-        },
-        {
-          "client_id": "24858763779-kbhvqrob2a8j9erk6ef6u4kl0nnmh551.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.srinua.foodDelivery",
-            "certificate_hash": "bb58e97b4b4977eebf9199e5722d4fe0b00da226"
-          }
-        },
-        {
-          "client_id": "24858763779-3tn63kkleobndnnk1g5junkpf34fqson.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDn7vV4K4ANOA-92-0-xjZ7rrx_WCjPMT8"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "24858763779-3tn63kkleobndnnk1g5junkpf34fqson.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:24858763779:android:3c869cbe90acbaf9be6436",
-        "android_client_info": {
-          "package_name": "com.srinua.second"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "24858763779-4kco18egibj7afdje32qemtqjv8171ev.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.srinua.second",
-            "certificate_hash": "37b531702a16d5fb7ebb6cf80226e1aceda83d7e"
-          }
-        },
-        {
-          "client_id": "24858763779-3tn63kkleobndnnk1g5junkpf34fqson.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDn7vV4K4ANOA-92-0-xjZ7rrx_WCjPMT8"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "24858763779-3tn63kkleobndnnk1g5junkpf34fqson.apps.googleusercontent.com",
+              "client_id": "925102963718-fi5afief8l6qntqf206g6k0ao9shct25.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

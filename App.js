@@ -13,6 +13,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Profile from './ui/Profile';
 import Message from './ui/Message';
 import colors from './Theme/Colors';
+import Login from './ui/Login';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -21,41 +22,47 @@ export default function App() {
 
   const font = fonts();
 
-function BottomTabs() {
-  return (
-    <Tab.Navigator
-  screenOptions={({ route }) => ({
-    headerShown: false,
-    tabBarIcon: ({ focused, color, size }) => {
-      let iconName;
+  function BottomTabs() {
+    return (
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          headerShown: false,
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
 
-      if (route.name === 'Home') {
-        iconName = 'home';
-      } else if (route.name === 'Profile') {
-        iconName = 'person';
-      } else if (route.name === 'Messages') {
-        iconName = 'chatbox';
-      }
+            if (route.name === 'Home') {
+              iconName = 'home';
+            } else if (route.name === 'Profile') {
+              iconName = 'person';
+            } else if (route.name === 'Messages') {
+              iconName = 'chatbox';
+            }
 
-      return <Ionicons name={iconName} size={24} color={colors.fundation} />;
-    },
-  })}
->
+            return <Ionicons name={iconName} size={24} color={colors.fundation} />;
+          },
+        })}
+      >
 
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Profile" component={Profile} />
-      <Tab.Screen name="Messages" component={Message} />
-    </Tab.Navigator>
-  );
-}
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="Profile" component={Profile} />
+        <Tab.Screen name="Messages" component={Message} />
+      </Tab.Navigator>
+    );
+  }
 
 
   return (
 
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Login">
+
           {/* Bottom Tabs as main screen */}
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="MainTabs"
             component={BottomTabs}

@@ -6,12 +6,29 @@ import { Theme } from '../Theme/Theme'
 import styles from '../FontStyle/FontStyles'
 import { useNavigation } from '@react-navigation/native'
 import RazorpayCheckout from 'react-native-razorpay'
-const Home = () => {
+import auth from '@react-native-firebase/auth';
+import { GoogleSignin } from '@react-native-google-signin/google-signin'
+const Home = ({signout,user}) => {
 
+    
     const navigation = useNavigation();
     const navigateOnPress = (str) => {
         navigation.navigate('Details', { category: str });
     }
+    
+const exit = async () => {
+  try {
+    await auth().signOut();          
+    await GoogleSignin.signOut();    
+    await GoogleSignin.revokeAccess();
+  } catch (error) {
+    console.error(error);
+  }
+};
+    // const exit=()=>{
+    //     signout();
+
+    // }
     const handlePayment = () => {
         const options = {
             description: 'proceed to payment',
@@ -35,12 +52,16 @@ const Home = () => {
                 alert(`Payment Failed: ${error.code} | ${error.description}`);
             });
     };
+    console.log(user);
     return (
         
         <ScrollView style={styles.body}>
-            <View style={styles.starting}>
-                <Text style={Theme.font20SemiBold}>Hey srinu, Good Morning!</Text>
-            </View>
+            <View style={[styles.starting,{justifyContent:'space-between',alignItems:'center'}]}>
+                <Text style={Theme.font20SemiBold}>Hey {user.displayName}, Good Morning!</Text>
+                <TouchableOpacity onPress={exit} style={{paddingRight:40}}>
+                <Ionicons name='exit' size={28} color='red'/>
+                </TouchableOpacity>            
+                </View>
             <View style={styles.text}>
                 <Ionicons name='search' size={28} color='grey' />
                 <TextInput placeholder='search dishes, restaurants' placeholderTextColor="grey" />
