@@ -22,7 +22,7 @@ const colors = {
     lightPurple: "#FAF5FF",
     purple: "#9333EA",
     InputTextColor: '#3D4C5E',
-    themeColor: "#FF7622",
+    themeColor: "#87b71e",
     greyColor: "#CBD5E1",
     foundationAtlasBlue: "#EBF7FE",
     infoBoxBg: "#E6F5FE",

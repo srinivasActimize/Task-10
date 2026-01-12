@@ -1,12 +1,46 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
+import React from 'react';
+import auth from '@react-native-firebase/auth';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
+import { Theme } from '../Theme/Theme';
 
 const Profile = () => {
-  return (
-    <View>
-      <Text>Profile</Text>
-    </View>
-  )
-}
+  const user = auth().currentUser;
+  const navigation = useNavigation();
 
-export default Profile
+  const exit = async () => {
+    console.log('clicked');
+    await auth().signOut();
+    console.log('clicked1');
+    await GoogleSignin.signOut();
+    console.log('clicked2');
+    // await GoogleSignin.revokeAccess();
+    console.log('clicked3');
+    navigation.replace('Login');
+  };
+
+  return (
+    <SafeAreaView style={{ flex: 1 }}>
+      <ScrollView>
+        <Text style={[Theme.font36SemiBold, { alignSelf: 'center' }]}>
+          {user?.displayName}
+        </Text>
+
+        <Image
+          source={{ uri: user?.photoURL }}
+          style={{ width: 200, height: 200, borderRadius: 100, alignSelf: 'center' }}
+        />
+
+        <TouchableOpacity onPress={exit}>
+          <Text style={[Theme.font18SemiBold, { borderWidth:2,borderRadius:6,borderColor:'purple',padding:10,alignSelf: 'center', marginTop: 30 }]}>
+            Sign Out
+          </Text>
+        </TouchableOpacity>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default Profile;

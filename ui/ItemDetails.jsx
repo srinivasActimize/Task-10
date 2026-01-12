@@ -59,7 +59,7 @@ const ItemDetails = ({ route }) => {
                             style={styles.buttonContainer}
                             title="order now"
                             onPress={handlePayment}>
-                            <Text style={[styles.buttonText, { color: styles.textColor }]}>Order Now</Text>
+                            <Text style={[styles.buttonText, { color: styles.textColor }]}>&#8377; {itemDetails.cost}  Order Now</Text>
                         </TouchableOpacity>
                     </View>
                 </View>

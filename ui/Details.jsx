@@ -41,6 +41,7 @@ const Details = ({ route }) => {
               <View style={styles.centering}>
                 <Text style={Theme.font24SemiBold}>{item.name}</Text>
                 <Image source={{ uri: item.image }} style={{ width: 300, height: 220 }} />
+                <Text style={{borderWidth:3,borderRadius:9,padding:4,borderColor:'green',width:80}}>Buy Now</Text>
               </View>
             </View>
           </Pressable>
