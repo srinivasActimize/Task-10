@@ -14,7 +14,9 @@ import { StyleSheet } from "react-native";
     },
     card: {
         backgroundColor: '#fff',
-        elevation: 10,
+        elevation: 2,
+         shadowOpacity: 0.3,
+    shadowRadius: 4,
         borderRadius: 22,
         padding: 10,
         marginHorizontal: 10,

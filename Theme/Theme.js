@@ -1,7 +1,6 @@
 import { StyleSheet } from "react-native";
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
-// import colors from "./colors";
 import colors from "./Colors";
 import { useFonts } from "expo-font";
 export const fonts = () => {
@@ -13,7 +12,7 @@ export const fonts = () => {
     });
     useEffect(() => {
         if (fontsLoaded) {
-            console.log('✅ Fonts loaded successfully');
+            console.log(' Fonts loaded successfully');
             SplashScreen.hideAsync();
         }
     }, [fontsLoaded]);
@@ -41,7 +40,6 @@ export const Theme = StyleSheet.create({
         color: colors.danger,
         marginBottom: 8,
         marginLeft: 4,
-       
     },
     font12: {
         fontFamily: 'Sen-Regular',
@@ -87,7 +85,6 @@ export const Theme = StyleSheet.create({
         fontFamily: 'Sen-Regular',
         fontSize: 14,
         color: colors.mainTextColor,
-        // borderWidth: 1
     },
     font14Medium: {
         fontFamily: 'Sen-Medium',
@@ -128,8 +125,6 @@ export const Theme = StyleSheet.create({
         fontFamily: 'Sen-SemiBold',
         fontSize: 32,
         color: colors.mainTextColor,
-    },
-   
-   
-   
+    } 
+      
 });

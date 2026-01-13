@@ -2,7 +2,7 @@ import { View, Image, Text, TextInput, Pressable, Alert, TouchableOpacity, Butto
 import React from 'react'
 import { ScrollView } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-import { Theme } from '../Theme/Theme'
+import { fonts, Theme } from '../Theme/Theme'
 import styles from '../FontStyle/FontStyles'
 import { useNavigation } from '@react-navigation/native'
 import RazorpayCheckout from 'react-native-razorpay'
@@ -14,6 +14,8 @@ const Home = () => {
 
     const user = auth().currentUser;
     const navigation = useNavigation();
+    const font= fonts();
+
     const navigateOnPress = (str) => {
         navigation.navigate('Details', { category: str });
     }
@@ -29,10 +31,7 @@ const Home = () => {
         }
     };
 
-    // const exit=()=>{
-    //     signout();
-
-    // }
+    
     const handlePayment = () => {
         const options = {
             description: 'proceed to payment',
@@ -71,7 +70,7 @@ const Home = () => {
                         },
                     ]}
                 >
-                    <Text style={Theme.font32SemiBold}>
+                    <Text style={Theme.font24SemiBold}>
                         Hey {user?.displayName || 'User'}, Good Morning!
                     </Text>
                 </View>

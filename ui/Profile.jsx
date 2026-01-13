@@ -11,13 +11,8 @@ const Profile = () => {
   const navigation = useNavigation();
 
   const exit = async () => {
-    console.log('clicked');
     await auth().signOut();
-    console.log('clicked1');
     await GoogleSignin.signOut();
-    console.log('clicked2');
-    // await GoogleSignin.revokeAccess();
-    console.log('clicked3');
     navigation.replace('Login');
   };
 
