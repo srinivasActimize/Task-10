@@ -1,4 +1,6 @@
 import { StyleSheet } from "react-native";
+import { Theme } from "../Theme/Theme";
+import colors from "../Theme/Colors";
 
 
  const styles = StyleSheet.create({
@@ -8,6 +10,21 @@ import { StyleSheet } from "react-native";
     matter: {
         fontSize: 23,
         color: '#2B2A2A'
+    },
+    locationContainer:{
+        justifyContent:'center',
+        alignContent:'center',
+        marginHorizontal:'10%',
+    },
+    searchBar:{
+        backgroundColor:'#e0dede',
+        width:'90%',
+        padding:6,
+        marginBottom:10,
+        borderRadius:15,
+        flexDirection:'row',
+        alignItems:'center',
+        alignSelf:'center'
     },
     body: {
         backgroundColor: 'white'
@@ -72,9 +89,8 @@ import { StyleSheet } from "react-native";
         margin: 10
     },
     buttonContainer: {
-    // elevation: 1, // Android shadow
-    borderWidth:3,
-    borderRadius: 20,
+    backgroundColor:colors.themeColor,
+    borderRadius: 10,
     marginVertical:10,
     paddingVertical: 10,
     paddingHorizontal: 12,

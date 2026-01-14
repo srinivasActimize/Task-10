@@ -13,7 +13,7 @@ import Message from './ui/Message';
 import Details from './ui/Details';
 import ItemDetails from './ui/ItemDetails';
 import colors from './Theme/Colors';
-
+import { StatusBar } from 'expo-status-bar';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -28,7 +28,7 @@ function BottomTabs() {
           if (route.name === 'Messages') iconName = 'notifications';
           if (route.name === 'Profile') iconName = 'person';
 
-          return <Ionicons name={iconName} size={24} color={colors.fundation} />;
+          return <Ionicons name={iconName} size={24} color={colors.themeColor} />;
         },
       })}
     >
@@ -43,6 +43,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
+        <StatusBar style="dark" backgroundColor="#fff" />
         <Stack.Navigator initialRouteName="Login">
           <Stack.Screen
             name="Login"

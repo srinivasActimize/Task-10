@@ -1,5 +1,5 @@
 import { View, Image, Text, TextInput, Pressable, Alert, TouchableOpacity, Button } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ScrollView } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { fonts, Theme } from '../Theme/Theme'
@@ -9,29 +9,31 @@ import RazorpayCheckout from 'react-native-razorpay'
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-google-signin/google-signin'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import colors from '../Theme/Colors'
+import useLocation from '../hooks/useLocation'
 
 const Home = () => {
 
     const user = auth().currentUser;
     const navigation = useNavigation();
-    const font= fonts();
+  
+    const font = fonts();
 
+    const { longitude, latitude, address, errorMsg } = useLocation();
+    
+    console.log(longitude);
     const navigateOnPress = (str) => {
         navigation.navigate('Details', { category: str });
     }
+    const City = address ? address.city : 'Unknown';
+    const Street = address ? address.street : 'Unknown';
+    useEffect(() => {
+        console.log('Latitude:', latitude);
+        console.log('Longitude:', longitude);
+        console.log('Address:', address);
+    }, [latitude, longitude]);
 
-    const exit = async () => {
-        try {
-            await auth().signOut();
-            await GoogleSignin.signOut();
-            await GoogleSignin.revokeAccess();
 
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-    
     const handlePayment = () => {
         const options = {
             description: 'proceed to payment',
@@ -44,7 +46,7 @@ const Home = () => {
                 contact: '9999999999',
                 name: 'Srinu',
             },
-            theme: { color: '#8B5CF6' },
+            theme: { color: colors.themeColor },
         };
 
         RazorpayCheckout.open(options)
@@ -59,6 +61,11 @@ const Home = () => {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
             <ScrollView style={styles.body}>
+                <View style={styles.locationContainer}>
+                    <Ionicons name='location' size={30} color={colors.themeColor} />
+                    <Text style={Theme.font14SemiBold}>{City}</Text>
+                    <Text style={Theme.font14SemiBold}>{Street}</Text>
+                </View>
                 <View
                     style={[
                         styles.starting,
@@ -70,11 +77,13 @@ const Home = () => {
                         },
                     ]}
                 >
+
                     <Text style={Theme.font24SemiBold}>
                         Hey {user?.displayName || 'User'}, Good Morning!
                     </Text>
+
                 </View>
-                <View style={styles.text}>
+                <View style={styles.searchBar}>
                     <Ionicons name='search' size={28} color='grey' />
                     <TextInput placeholder='search dishes, restaurants' placeholderTextColor="grey" />
                 </View>
@@ -143,9 +152,9 @@ const Home = () => {
                         <View>
                             <Text style={Theme.font24SemiBold}>Chilli chicken</Text>
                             <View style={styles.cardContent}>
-                                <View style={{ flexDirection: 'row' }}><Ionicons name='star' size={25} color='#FEB05D' /><Text> 4.7</Text></View>
-                                <View style={{ flexDirection: 'row' }}><Ionicons name='bicycle' size={25} color='#FEB05D' /><Text> Free</Text></View>
-                                <View style={{ flexDirection: 'row' }}><Ionicons name='alarm' size={25} color='#FEB05D' /><Text> 20min</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='star' size={25} color={colors.themeColor} /><Text> 4.7</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='bicycle' size={25} color={colors.themeColor} /><Text> Free</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='alarm' size={25} color={colors.themeColor} /><Text> 20min</Text></View>
                             </View>
                             <TouchableOpacity
                                 style={styles.buttonContainer}
@@ -164,9 +173,9 @@ const Home = () => {
                         <View>
                             <Text style={Theme.font24SemiBold}>masala biryani</Text>
                             <View style={styles.cardContent}>
-                                <View style={{ flexDirection: 'row' }}><Ionicons name='star' size={25} color='#FEB05D' /><Text> 4.0</Text></View>
-                                <View style={{ flexDirection: 'row' }}><Ionicons name='bicycle' size={25} color='#FEB05D' /><Text> Free</Text></View>
-                                <View style={{ flexDirection: 'row' }}><Ionicons name='alarm' size={25} color='#FEB05D' /><Text> 10min</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='star' size={25} color={colors.themeColor} /><Text> 4.7</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='bicycle' size={25} color={colors.themeColor} /><Text> Free</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='alarm' size={25} color={colors.themeColor} /><Text> 20min</Text></View>
                             </View>
                             <TouchableOpacity
                                 style={styles.buttonContainer}
@@ -185,9 +194,9 @@ const Home = () => {
                         <View>
                             <Text style={Theme.font24SemiBold}>Chicken Tandoori</Text>
                             <View style={styles.cardContent}>
-                                <View style={{ flexDirection: 'row' }}><Ionicons name='star' size={25} color='#FEB05D' /><Text> 5.0</Text></View>
-                                <View style={{ flexDirection: 'row' }}><Ionicons name='bicycle' size={25} color='#FEB05D' /><Text> Free</Text></View>
-                                <View style={{ flexDirection: 'row' }}><Ionicons name='alarm' size={25} color='#FEB05D' /><Text> 15min</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='star' size={25} color={colors.themeColor} /><Text> 4.7</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='bicycle' size={25} color={colors.themeColor} /><Text> Free</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='alarm' size={25} color={colors.themeColor} /><Text> 20min</Text></View>
                             </View>
                             <TouchableOpacity
                                 style={styles.buttonContainer}

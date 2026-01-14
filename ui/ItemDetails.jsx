@@ -4,6 +4,7 @@ import styles from '../FontStyle/FontStyles'
 import { Theme } from '../Theme/Theme'
 import { Ionicons } from '@expo/vector-icons'
 import RazorpayCheckout from 'react-native-razorpay';
+import colors from '../Theme/Colors'
 const ItemDetails = ({ route }) => {
 
     const { itemDetails } = route.params;
@@ -25,7 +26,7 @@ const ItemDetails = ({ route }) => {
       contact: '9999999999',
       name: 'Srinu',
     },
-    theme: { color: '#8B5CF6' },
+    theme: { color:colors.themeColor },
   };
 
   RazorpayCheckout.open(options)
@@ -51,9 +52,9 @@ const ItemDetails = ({ route }) => {
                         <Text style={Theme.font24SemiBold}>{itemDetails.name}</Text>
                         <Text style={[styles.cardContent,Theme.font16Regular,{padding:10}]}>{itemDetails.description}</Text>
                         <View style={[{padding:15},styles.cardContent]}>
-                            <View style={{ flexDirection: 'row' }}><Ionicons name='star' size={25} color='#FEB05D' /><Text> 4.0</Text></View>
-                            <View style={{ flexDirection: 'row' }}><Ionicons name='bicycle' size={25} color='#FEB05D' /><Text> Free</Text></View>
-                            <View style={{ flexDirection: 'row' }}><Ionicons name='alarm' size={25} color='#FEB05D' /><Text> 10min</Text></View>
+                      <View style={{ flexDirection: 'row' }}><Ionicons name='star' size={25} color={colors.themeColor} /><Text> 4.7</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='bicycle' size={25} color={colors.themeColor} /><Text> Free</Text></View>
+                                <View style={{ flexDirection: 'row' }}><Ionicons name='alarm' size={25} color={colors.themeColor}/><Text> 20min</Text></View>
                         </View>
                         <TouchableOpacity
                             style={styles.buttonContainer}

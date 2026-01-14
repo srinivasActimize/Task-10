@@ -13,13 +13,16 @@ import Header from '../Header';
 import { fonts } from '../Theme/Theme';
 
 export default function Login({ navigation }) {
+
+  const [isLogin, setIsLogin] = useState(true);
+
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState(null);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
- 
-  const font=fonts();
+
+  const font = fonts();
   useEffect(() => {
     GoogleSignin.configure({
       webClientId:
@@ -118,24 +121,51 @@ export default function Login({ navigation }) {
           secureTextEntry
         />
 
-        <TouchableOpacity
-          style={styles.loginBtn}
-          onPress={() => loginUser(email, password)}
-        >
-          <Text style={styles.btnText}>Login</Text>
-        </TouchableOpacity>
+        {isLogin ? (
+          <>
+            <TouchableOpacity
+              style={styles.loginBtn}
+              onPress={() => loginUser(email, password)}
+            >
+              <Text style={styles.btnText}>Login</Text>
+            </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.signupBtn}
-          onPress={() => registerUser(email, password)}
-        >
-          <Text style={styles.btnText}>Sign Up</Text>
-        </TouchableOpacity>
+            <Text style={{ marginTop: 10 }}>
+              Don't have an account?
+            </Text>
 
-        <GoogleSigninButton
-          style={{ width: 300, height: 65, marginTop: 30 }}
-          onPress={onGoogleButtonPress}
-        />
+            <TouchableOpacity onPress={() => setIsLogin(false)}>
+              <Text style={{ color: 'blue' }}>Register</Text>
+            </TouchableOpacity>
+          </>
+        ) : (
+          <>
+          
+            <TouchableOpacity
+              style={styles.signupBtn}
+              onPress={() => registerUser(email, password)}
+            >
+              <Text style={styles.btnText}>Sign Up</Text>
+            </TouchableOpacity>
+
+            <Text style={{ marginTop: 10 }}>
+              Already have an account?
+            </Text>
+
+            <TouchableOpacity onPress={() => setIsLogin(true)}>
+              <Text style={{ color: 'blue' }}>Login</Text>
+            </TouchableOpacity>
+          </>
+        )}
+
+
+        {isLogin && (
+          <GoogleSigninButton
+            style={{ width: 300, height: 65, marginTop: 30 }}
+            onPress={onGoogleButtonPress}
+          />
+        )}
+
       </View>
     );
   }
