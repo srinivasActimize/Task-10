@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import styles from '../FontStyle/FontStyles'
 import { Theme } from '../Theme/Theme'
 import { useNavigation } from '@react-navigation/native'
+import { SafeAreaView } from 'react-native-safe-area-context'
 const Details = ({ route }) => {
   const { category } = route.params;
   const dispatch = useDispatch();
@@ -13,9 +14,9 @@ const Details = ({ route }) => {
   const { data, loading } = useSelector(
     state => state.getproductsdata
   );
-  const navigate= useNavigation();
-  const detailsPage =(item)=>{
-    navigate.navigate('ItemDetails',{itemDetails:item});
+  const navigate = useNavigation();
+  const detailsPage = (item) => {
+    navigate.navigate('ItemDetails', { itemDetails: item });
   }
 
   useEffect(() => {
@@ -28,27 +29,29 @@ const Details = ({ route }) => {
     firebaseKey && category
       ? data[firebaseKey][category]
       : [];
-      
-  return (
-    <View>
-      <Text style={[styles.centering, Theme.font36SemiBold]}>{category.toUpperCase()}</Text>
-      <FlatList
-        data={filteredData}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => (
-          <Pressable onPress={()=>detailsPage(item)}>
-            <View style={styles.card}>
-              <View style={styles.centering}>
-                <Text style={Theme.font24SemiBold}>{item.name}</Text>
-                <Image source={{ uri: item.image }} style={{ width: 300, height: 220 }} />
-                <Text style={{alignSelf:'flex-end',borderWidth:3,borderRadius:9,padding:4,borderColor:'green',width:80}}>Details</Text>
-              </View>
-            </View>
-          </Pressable>
-        )}
-      />
 
-    </View>
+  return (
+    
+      <View style={{marginBottom:'20%'}}>
+        <Text style={[styles.centering, Theme.font36SemiBold]}>{category.toUpperCase()}</Text>
+        <FlatList
+          data={filteredData}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item }) => (
+            <Pressable onPress={() => detailsPage(item)}>
+              <View style={styles.card}>
+                <View style={styles.centering}>
+                  <Text style={Theme.font24SemiBold}>{item.name}</Text>
+                  <Image source={{ uri: item.image }} style={{ width: 300, height: 220 }} />
+                  <Text style={{ alignSelf: 'flex-end', borderWidth: 3, borderRadius: 9, padding: 4, borderColor: 'green', width: 80 }}>Details</Text>
+                </View>
+              </View>
+            </Pressable>
+          )}
+        />
+
+      </View>
+    
   );
 };
 

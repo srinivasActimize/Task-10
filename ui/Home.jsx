@@ -62,8 +62,8 @@ const Home = () => {
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
             <ScrollView style={styles.body}>
                 <View style={styles.locationContainer}>
-                    <Ionicons name='location' size={30} color={colors.themeColor} />
-                    <Text style={Theme.font14SemiBold}>{City}</Text>
+                    <Ionicons name='location' size={20} color={colors.themeColor} />
+                    <Text style={Theme.font14SemiBold}>  {City}, </Text>
                     <Text style={Theme.font14SemiBold}>{Street}</Text>
                 </View>
                 <View
@@ -73,7 +73,6 @@ const Home = () => {
                             justifyContent: 'space-between',
                             alignItems: 'center',
                             paddingTop: 10,
-                            paddingHorizontal: 10,
                         },
                     ]}
                 >
@@ -84,12 +83,12 @@ const Home = () => {
 
                 </View>
                 <View style={styles.searchBar}>
-                    <Ionicons name='search' size={28} color='grey' />
-                    <TextInput placeholder='search dishes, restaurants' placeholderTextColor="grey" />
+                    <Ionicons name='search' size={28} color='#080808' />
+                    <TextInput style={{color:'#000000'}} placeholder='search dishes, restaurants' placeholderTextColor="grey" />
                 </View>
-                <Text style={[Theme.font24SemiBold, { paddingLeft: 10 }]}>All categories</Text>
+                <Text style={[Theme.font24SemiBold, { paddingLeft: 15 }]}>All categories</Text>
                 <View style={styles.categorieImages}>
-                    <ScrollView horizontal={true}>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                         <Pressable onPress={() => { navigateOnPress('burgers') }}>
                             <View style={styles.card}>
                                 <Image style={styles.img} source={require('../assets/images/burger.png')} />
@@ -142,7 +141,7 @@ const Home = () => {
                 </View>
 
                 <View>
-                    <Text style={[Theme.font24SemiBold, { paddingLeft: 10 }]}>Top Items</Text>
+                    <Text style={[Theme.font24SemiBold, { paddingLeft: 15 }]}>Top Items</Text>
                 </View>
                 <Pressable>
                     <View style={[styles.card, { width: "85%", alignSelf: "center" }]}>

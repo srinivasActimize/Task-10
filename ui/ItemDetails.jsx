@@ -40,6 +40,7 @@ const ItemDetails = ({ route }) => {
     return (
         <View>
             <Pressable>
+                <Text style={[Theme.font18SemiBold,{alignSelf:'center',marginTop:10}]}>Details Of the item</Text>
                 <View style={[styles.card, { width: "85%", alignSelf: "center" }]}>
                     <View style={styles.centering}>
                     <Image

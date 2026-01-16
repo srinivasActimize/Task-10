@@ -12,12 +12,17 @@ import colors from "../Theme/Colors";
         color: '#2B2A2A'
     },
     locationContainer:{
-        justifyContent:'center',
-        alignContent:'center',
+        backgroundColor:'#ecebeb',
+        padding:10,
+        borderRadius:10,
+        marginTop:20,
+        alignSelf:'center',
         marginHorizontal:'10%',
+        flexDirection:'row',
+        width:'90%'
     },
     searchBar:{
-        backgroundColor:'#e0dede',
+        backgroundColor:'#f3efef',
         width:'90%',
         padding:6,
         marginBottom:10,
